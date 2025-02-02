@@ -36,6 +36,7 @@ public class SolutionsEnterprizHoverLesson5 {
     @Test
     void dragAndDropWithActionsTest () {
         open("https://the-internet.herokuapp.com/drag_and_drop");
+        $("#column-b").shouldHave(text("B"));
         $("#column-a").shouldHave(text("A")).hover();
         actions().clickAndHold().moveToElement($("#column-b")).release().perform();
         $("#column-a").shouldHave(text("B"));
@@ -46,6 +47,7 @@ public class SolutionsEnterprizHoverLesson5 {
     @Test
     void dragAndDropWithOptionsTest () {
         open("https://the-internet.herokuapp.com/drag_and_drop");
+        $("#column-b").shouldHave(text("B"));
         $("#column-a").shouldHave(text("A")).hover();
         $("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b")));
         $("#column-a").shouldHave(text("B"));
